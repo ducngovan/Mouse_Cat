@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOUSE_AND_CAT</title>
+</head>
+<body>
+<script>
+    function Mouse(name,khoiluong,spees,status) {
+        this.name = name;
+        this.khoiluong = khoiluong;
+        this.spees = spees;
+        this.status = true;
+        this.getkeu = function () {
+            alert("chit chit chit....!")
+        }
+    }
+function Cat(name,khoiluong,spees) {
+        this.name = name;
+        this.khoiluong = khoiluong;
+        this.spees =spees;
+        this.getkeu = function () {
+            alert("meo meo..!")
+        };
+        this.getBat = function (Mouse) {
+            if(this.spees >= Mouse.spees){
+                alert(this.name +" bat duoc "+ Mouse.name);
+                return 'ok';
+            }else{
+                alert(this.name + " khong bat duoc " +Mouse.name);
+            }
+        };
+        this.getEat = function (Mouse) {
+            if(Mouse.status == true && this.Bat=='ok' ){
+               this.khoiluong += Mouse.khoiluong;
+               alert( this.name +" da an "+ Mouse.name + " khoi luong "+ this.khoiluong);
+            }else{
+                alert(" khong them an");
+            }
+        };
+}
+
+    let chuot1 = new Mouse('duc',65,30,true);
+    let chuot2 = new Mouse('duc1',60,36,true);
+    let chuot3 = new Mouse('duc2',55,666,true);
+    let meo = new Cat('thay',80,89);
+    // meo.getBat(chuot1);
+    // meo.getEat(chuot1);
+    meo.getBat(chuot3);
+    meo.getEat(chuot3)
+</script>
+</body>
+</html>
